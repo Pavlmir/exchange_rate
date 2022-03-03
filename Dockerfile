@@ -1,6 +1,8 @@
 FROM python:3.8.6
 
-RUN apt-get update
+# clean and update sources
+RUN apt-get clean
+RUN apt-get update && apt-get upgrade -y
 RUN pip3 install --upgrade pip
 
 WORKDIR /code
